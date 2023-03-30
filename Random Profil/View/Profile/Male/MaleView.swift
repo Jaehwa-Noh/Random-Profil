@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MaleView: View {
+struct MaleView: View, ProfilePage {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
