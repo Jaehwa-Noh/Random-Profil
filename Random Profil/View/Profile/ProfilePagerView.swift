@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfilePagerView: View {
     private var tabList = ["남자", "여자"]
     @State private var selectedTab: Int = 0
+    @State private var isForward: Bool = true
+    @State private var pageIndex: Int = 0
     let pages: [ProfilePage] = [MaleView(), FemaleView()]
     
     var body: some View {
@@ -40,7 +42,14 @@ struct ProfilePagerView: View {
                     }
                 }.frame(height: 30)
                 
-                ProfilePageViewController(pages: pages, index: $selectedTab)
+                ProfilePageViewController(pages: pages, index: $pageIndex, isForward: $isForward)
+            }
+            .onChange(of: selectedTab) {[selectedTab] newValue in
+                isForward = newValue >= selectedTab
+                pageIndex = newValue
+            }
+            .onChange(of: pageIndex) { newValue in
+                selectedTab = newValue
             }
             .navigationTitle("랜덤 프로필")
             .navigationBarTitleDisplayMode(.inline)

@@ -11,6 +11,7 @@ import SwiftUI
 struct ProfilePageViewController: UIViewControllerRepresentable {
     var pages: [ProfilePage]
     @Binding var index: Int
+    @Binding var isForward: Bool
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -26,7 +27,8 @@ struct ProfilePageViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ profilePageViewController: UIPageViewController, context: Context) {
-        profilePageViewController.setViewControllers([context.coordinator.controllers[index]], direction: .forward, animated: true)
+        
+        profilePageViewController.setViewControllers([context.coordinator.controllers[index]], direction: isForward ? .forward : .reverse, animated: true)
         
     }
     
