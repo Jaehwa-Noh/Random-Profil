@@ -32,17 +32,12 @@ struct ProfilePagerView: View {
                                         .fill(Color.green)
                                         .opacity(selectedTab == index ? 1 : 0)
                                         .frame(width:geo.size.width, height: 2)
-                                    
-                                    Spacer()
-                                    
                                 }
-                                
                             }
-                            Spacer()
+                            
                         }
                     }
-                }
-                Spacer()
+                }.frame(height: 30)
                 
             }
             .navigationTitle("랜덤 프로필")
