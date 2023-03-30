@@ -20,14 +20,17 @@ struct ProfilePageViewController: UIViewControllerRepresentable {
         let profilePageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         
         profilePageViewController.dataSource = context.coordinator
+        profilePageViewController.delegate = context.coordinator
+        
         return profilePageViewController
     }
     
     func updateUIViewController(_ profilePageViewController: UIPageViewController, context: Context) {
-        profilePageViewController.setViewControllers([context.coordinator.controllers[0]], direction: .forward, animated: true)
+        profilePageViewController.setViewControllers([context.coordinator.controllers[index]], direction: .forward, animated: true)
+        
     }
     
-    class Coordinator: NSObject, UIPageViewControllerDataSource {
+    class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
         var parent: ProfilePageViewController
         var controllers = [UIViewController]()
         
@@ -44,6 +47,12 @@ struct ProfilePageViewController: UIViewControllerRepresentable {
                     return UIHostingController(rootView:page as! FemaleView)
                     
                 }
+            }
+        }
+        
+        func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            if completed, let visibleViewController = pageViewController.viewControllers?.first, let index = controllers.firstIndex(of: visibleViewController) {
+                parent.index = index
             }
         }
         
