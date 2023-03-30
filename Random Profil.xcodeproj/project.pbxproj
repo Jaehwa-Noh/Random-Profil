@@ -16,6 +16,7 @@
 		CF2BEF5A29D567E4005C75A6 /* MaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5929D567E4005C75A6 /* MaleView.swift */; };
 		CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */; };
 		CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5E29D57801005C75A6 /* ProfilePageViewController.swift */; };
+		CF2BEF6229D58592005C75A6 /* ProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF6129D58592005C75A6 /* ProfileListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CF2BEF5929D567E4005C75A6 /* MaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaleView.swift; sourceTree = "<group>"; };
 		CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageProtocol.swift; sourceTree = "<group>"; };
 		CF2BEF5E29D57801005C75A6 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		CF2BEF6129D58592005C75A6 /* ProfileListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		CF2BEF5129D5672D005C75A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF2BEF6029D58567005C75A6 /* Profile List Item */,
 				CF2BEF5229D56740005C75A6 /* Profile */,
 			);
 			path = View;
@@ -120,6 +123,14 @@
 				CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CF2BEF6029D58567005C75A6 /* Profile List Item */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BEF6129D58592005C75A6 /* ProfileListItemView.swift */,
+			);
+			path = "Profile List Item";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				CF2BEF5829D567DC005C75A6 /* FemaleView.swift in Sources */,
 				CF2BEF5429D5679C005C75A6 /* ProfilePagerView.swift in Sources */,
 				CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */,
+				CF2BEF6229D58592005C75A6 /* ProfileListItemView.swift in Sources */,
 				CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */,
 				CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */,
 				CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */,
