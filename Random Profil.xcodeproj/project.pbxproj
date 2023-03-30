@@ -15,6 +15,7 @@
 		CF2BEF5829D567DC005C75A6 /* FemaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5729D567DC005C75A6 /* FemaleView.swift */; };
 		CF2BEF5A29D567E4005C75A6 /* MaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5929D567E4005C75A6 /* MaleView.swift */; };
 		CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */; };
+		CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5E29D57801005C75A6 /* ProfilePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CF2BEF5729D567DC005C75A6 /* FemaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FemaleView.swift; sourceTree = "<group>"; };
 		CF2BEF5929D567E4005C75A6 /* MaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaleView.swift; sourceTree = "<group>"; };
 		CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageProtocol.swift; sourceTree = "<group>"; };
+		CF2BEF5E29D57801005C75A6 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,27 +90,28 @@
 		CF2BEF5229D56740005C75A6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CF2BEF5629D567C9005C75A6 /* Female */,
-				CF2BEF5529D567C1005C75A6 /* Male */,
+				CF2BEF5629D567C9005C75A6 /* FemaleView */,
+				CF2BEF5529D567C1005C75A6 /* MaleView */,
 				CF2BEF5329D5679C005C75A6 /* ProfilePagerView.swift */,
+				CF2BEF5E29D57801005C75A6 /* ProfilePageViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		CF2BEF5529D567C1005C75A6 /* Male */ = {
+		CF2BEF5529D567C1005C75A6 /* MaleView */ = {
 			isa = PBXGroup;
 			children = (
 				CF2BEF5929D567E4005C75A6 /* MaleView.swift */,
 			);
-			path = Male;
+			path = MaleView;
 			sourceTree = "<group>";
 		};
-		CF2BEF5629D567C9005C75A6 /* Female */ = {
+		CF2BEF5629D567C9005C75A6 /* FemaleView */ = {
 			isa = PBXGroup;
 			children = (
 				CF2BEF5729D567DC005C75A6 /* FemaleView.swift */,
 			);
-			path = Female;
+			path = FemaleView;
 			sourceTree = "<group>";
 		};
 		CF2BEF5B29D5770A005C75A6 /* Utils */ = {
@@ -194,6 +197,7 @@
 				CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */,
 				CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */,
 				CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */,
+				CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */,
 				CF2BEF5A29D567E4005C75A6 /* MaleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
