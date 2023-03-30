@@ -22,6 +22,7 @@ struct ProfileListItemView: View {
                     Text("Location")
                     Text("E-mail")
                 }
+                .lineLimit(1)
                 .font(.body)
                 .foregroundColor(.gray)
             }
