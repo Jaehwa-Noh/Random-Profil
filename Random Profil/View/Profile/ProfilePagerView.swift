@@ -14,6 +14,7 @@ struct ProfilePagerView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Divider()
                 HStack {
                     Spacer()
                     ForEach(Array(tabList.enumerated()), id: \.offset) {
