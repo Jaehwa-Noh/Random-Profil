@@ -11,6 +11,7 @@
 		CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF4529D565C4005C75A6 /* ContentView.swift */; };
 		CF2BEF4829D565C5005C75A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BEF4729D565C5005C75A6 /* Assets.xcassets */; };
 		CF2BEF4B29D565C5005C75A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BEF4A29D565C5005C75A6 /* Preview Assets.xcassets */; };
+		CF2BEF5429D5679C005C75A6 /* ProfilePagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF5329D5679C005C75A6 /* ProfilePagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CF2BEF4529D565C4005C75A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF2BEF4729D565C5005C75A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2BEF4A29D565C5005C75A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF2BEF5329D5679C005C75A6 /* ProfilePagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		CF2BEF4229D565C4005C75A6 /* Random Profil */ = {
 			isa = PBXGroup;
 			children = (
+				CF2BEF5129D5672D005C75A6 /* View */,
 				CF2BEF4329D565C4005C75A6 /* Random_ProfilApp.swift */,
 				CF2BEF4529D565C4005C75A6 /* ContentView.swift */,
 				CF2BEF4729D565C5005C75A6 /* Assets.xcassets */,
@@ -65,6 +68,22 @@
 				CF2BEF4A29D565C5005C75A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF2BEF5129D5672D005C75A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BEF5229D56740005C75A6 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF2BEF5229D56740005C75A6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BEF5329D5679C005C75A6 /* ProfilePagerView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2BEF5429D5679C005C75A6 /* ProfilePagerView.swift in Sources */,
 				CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */,
 				CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */,
 			);
