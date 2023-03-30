@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfilePagerView: View {
     private var tabList = ["남자", "여자"]
     @State private var selectedTab: Int = 0
+    let pages: [ProfilePage] = [MaleView(), FemaleView()]
     
     var body: some View {
         NavigationView {
@@ -39,6 +40,7 @@ struct ProfilePagerView: View {
                     }
                 }.frame(height: 30)
                 
+                ProfilePageViewController(pages: pages, index: $selectedTab)
             }
             .navigationTitle("랜덤 프로필")
             .navigationBarTitleDisplayMode(.inline)

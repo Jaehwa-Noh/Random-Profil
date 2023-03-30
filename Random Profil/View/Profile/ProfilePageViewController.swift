@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfilePageViewController: UIViewControllerRepresentable {
     var pages: [ProfilePage]
+    @Binding var index: Int
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
