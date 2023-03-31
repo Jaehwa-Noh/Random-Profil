@@ -10,7 +10,7 @@ import Foundation
 class RandomUserClient {
     enum Endpoints {
         static let base = "https://randomuser.me/api/"
-        static let getPerson = "?results=70"
+        static let getPerson = "?results=30"
         
         case getPersonList(gender: String)
         
