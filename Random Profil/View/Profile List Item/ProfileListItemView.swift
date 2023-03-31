@@ -10,7 +10,6 @@ import SwiftUI
 struct ProfileListItemView: View {
     var imageURL: String
     
-    
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: imageURL)) { phase in
@@ -28,8 +27,6 @@ struct ProfileListItemView: View {
                         
                 }
             }
-            
-            
             
             Spacer()
                 .frame(width: 20)
