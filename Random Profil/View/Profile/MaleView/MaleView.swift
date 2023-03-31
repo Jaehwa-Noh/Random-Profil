@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct MaleView: View, ProfilePage {
+    
+    @StateObject private var viewModel = MaleFemaleViewModel(isMale: true)
+    
     var body: some View {
         ScrollView {
-            Text("Male View")
+            LazyVStack {
+                ForEach(viewModel.People, id:\.self.login.uuid) { people in
+                    Text(people.login.uuid)
+                }
+                Text("Male View")
+            }
+            
         }
     }
 }
