@@ -26,6 +26,7 @@
 		CFCECC0D29D6986D00A6D5E0 /* IdStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC0C29D6986D00A6D5E0 /* IdStruct.swift */; };
 		CFCECC0F29D698C000A6D5E0 /* PictureStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC0E29D698C000A6D5E0 /* PictureStruct.swift */; };
 		CFCECC1129D6998700A6D5E0 /* InfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1029D6998700A6D5E0 /* InfoStruct.swift */; };
+		CFCECC1429D69C9F00A6D5E0 /* MaleFemaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		CFCECC0C29D6986D00A6D5E0 /* IdStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdStruct.swift; sourceTree = "<group>"; };
 		CFCECC0E29D698C000A6D5E0 /* PictureStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureStruct.swift; sourceTree = "<group>"; };
 		CFCECC1029D6998700A6D5E0 /* InfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStruct.swift; sourceTree = "<group>"; };
+		CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaleFemaleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				CF2BEF5129D5672D005C75A6 /* View */,
 				CFCECBFC29D6846900A6D5E0 /* Model */,
+				CFCECC1229D69AF800A6D5E0 /* ViewModel */,
 				CF2BEF5B29D5770A005C75A6 /* Utils */,
 				CF2BEF4329D565C4005C75A6 /* Random_ProfilApp.swift */,
 				CF2BEF4529D565C4005C75A6 /* ContentView.swift */,
@@ -176,6 +179,14 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+		CFCECC1229D69AF800A6D5E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +266,7 @@
 				CFCECC0329D6850800A6D5E0 /* NameStruct.swift in Sources */,
 				CF2BEF6229D58592005C75A6 /* ProfileListItemView.swift in Sources */,
 				CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */,
+				CFCECC1429D69C9F00A6D5E0 /* MaleFemaleViewModel.swift in Sources */,
 				CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */,
 				CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */,
 				CFCECC0129D684CB00A6D5E0 /* ProfileStruct.swift in Sources */,
