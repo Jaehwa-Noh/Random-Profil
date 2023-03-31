@@ -17,10 +17,16 @@ struct MaleView: View, ProfilePage {
                 ForEach(viewModel.People, id:\.self.login.uuid) { people in
                     Text(people.login.uuid)
                 }
+                
                 Text("Male View")
             }
             
         }
+        .alert("서버 통신 문제", isPresented: $viewModel.isServerError) {
+            Button("확인", role:.cancel) {
+            }
+        }
+        
     }
 }
 
