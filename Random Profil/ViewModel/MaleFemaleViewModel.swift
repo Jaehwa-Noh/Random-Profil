@@ -17,7 +17,7 @@ class MaleFemaleViewModel: ObservableObject {
     }
     
     func getGenderList(isMale: Bool) {
-        let url = RandomUserClient.Endpoints.getPersonList(gender: isMale ? "Male" : "Female").url
+        let url = RandomUserClient.Endpoints.getPersonList(gender: isMale ? "male" : "female").url
         print(url)
         Task {
             do {
