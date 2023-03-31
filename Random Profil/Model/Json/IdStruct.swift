@@ -9,6 +9,6 @@ import Foundation
 
 struct IdStruct: Decodable {
     
-    let name: String
-    let value: String
+    let name: String?
+    let value: String?
 }

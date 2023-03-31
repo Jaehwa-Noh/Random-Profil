@@ -13,7 +13,7 @@ struct LocationStruct: Decodable {
     let city: String
     let state: String
     let country: String
-    let postcode: String
+    let postcode: PostalMultiType
     let coordinates: CoordinatorStruct
     let timezone: TimeZoneStruct
     
