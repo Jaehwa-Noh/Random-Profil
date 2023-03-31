@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct ProfileListItemView: View {
+    var imageURL: String
+    
+    
     var body: some View {
         HStack {
-            Image(systemName: "person")
-                .resizable()
-                .frame(width: 75, height: 75)
+            AsyncImage(url: URL(string: imageURL)) { phase in
+                
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .frame(width: 75, height: 75)
+                        
+                } else {
+                    Image(systemName: "person")
+                        .resizable()
+                        .foregroundColor(.gray)
+                        .frame(width: 75, height: 75)
+                        
+                }
+            }
+            
+            
+            
             Spacer()
                 .frame(width: 20)
             VStack(alignment: .leading) {
@@ -34,6 +52,6 @@ struct ProfileListItemView: View {
 
 struct ProfileListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileListItemView()
+        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg")
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct Random_ProfilApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/thumb/women/21.jpg")
         }
     }
 }
