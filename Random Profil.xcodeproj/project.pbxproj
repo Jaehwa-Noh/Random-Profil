@@ -29,6 +29,7 @@
 		CFCECC1429D69C9F00A6D5E0 /* MaleFemaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */; };
 		CFCECC1729D6A42400A6D5E0 /* RandomUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1629D6A42400A6D5E0 /* RandomUserClient.swift */; };
 		CFCECC1929D6B1A100A6D5E0 /* PostalMultiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1829D6B1A100A6D5E0 /* PostalMultiType.swift */; };
+		CFCECC1B29D6E6C400A6D5E0 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCECC1A29D6E6C400A6D5E0 /* ImageCaching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaleFemaleViewModel.swift; sourceTree = "<group>"; };
 		CFCECC1629D6A42400A6D5E0 /* RandomUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserClient.swift; sourceTree = "<group>"; };
 		CFCECC1829D6B1A100A6D5E0 /* PostalMultiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalMultiType.swift; sourceTree = "<group>"; };
+		CFCECC1A29D6E6C400A6D5E0 /* ImageCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				CF2BEF5C29D57731005C75A6 /* ProfilePageProtocol.swift */,
 				CFCECC1829D6B1A100A6D5E0 /* PostalMultiType.swift */,
+				CFCECC1A29D6E6C400A6D5E0 /* ImageCaching.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				CF2BEF6229D58592005C75A6 /* ProfileListItemView.swift in Sources */,
 				CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */,
 				CFCECC1429D69C9F00A6D5E0 /* MaleFemaleViewModel.swift in Sources */,
+				CFCECC1B29D6E6C400A6D5E0 /* ImageCaching.swift in Sources */,
 				CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */,
 				CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */,
 				CFCECC0129D684CB00A6D5E0 /* ProfileStruct.swift in Sources */,
