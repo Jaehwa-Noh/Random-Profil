@@ -12,13 +12,21 @@ struct MaleView: View, ProfilePage {
     @StateObject private var viewModel = MaleFemaleViewModel(isMale: true)
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewModel.People, id:\.self.login.uuid) { people in
-                    Text(people.login.uuid)
+        ZStack {
+            if viewModel.People.isEmpty {
+                ProgressView()
+                    .scaleEffect(CGSize(width: 1.5, height: 1.5))
+            }
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.People, id:\.self.login.uuid) { people in
+                        let name = "\(people.name.title) \(people.name.first) \(people.name.last)"
+                        ProfileListItemView(imageURL: people.picture.thumbnail, name: name, location: people.location.street.name, email: people.email)
+                            .onAppear {
+                                print(name)
+                            }
+                    }
                 }
-                
-                Text("Male View")
             }
             
         }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProfileListItemView: View {
     var imageURL: String
+    var name: String
+    var location: String
+    var email: String
     
     var body: some View {
         HStack {
@@ -23,7 +26,8 @@ struct ProfileListItemView: View {
                     Image(systemName: "person")
                         .resizable()
                         .foregroundColor(.gray)
-                        .frame(width: 75, height: 75)
+                        .frame(width: 55, height: 55)
+                        .padding(10)
                         
                 }
             }
@@ -31,11 +35,11 @@ struct ProfileListItemView: View {
             Spacer()
                 .frame(width: 20)
             VStack(alignment: .leading) {
-                Text("Name")
+                Text(name)
                     .font(.title)
                 Group {
-                    Text("Location")
-                    Text("E-mail")
+                    Text(location)
+                    Text(email)
                 }
                 .lineLimit(1)
                 .font(.body)
@@ -49,6 +53,6 @@ struct ProfileListItemView: View {
 
 struct ProfileListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg")
+        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg", name: "Hello", location: "location", email: "@gmail")
     }
 }
