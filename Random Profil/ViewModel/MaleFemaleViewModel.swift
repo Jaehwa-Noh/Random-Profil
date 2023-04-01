@@ -18,9 +18,39 @@ class MaleFemaleViewModel: ObservableObject {
         self.getGenderList(isMale: isMale)
     }
     
+    func getMoreList(isMale: Bool) {
+        let url = RandomUserClient.Endpoints.getPersonList(gender: isMale ? "male" : "female").url
+//        print(url)
+        Task {
+            do {
+                await MainActor.run {
+                    isServerError = false
+                }
+                
+                let getPeople = try await loadDataFromServer(url: url)
+                let filteredPeople = getPeople.filter {
+                    aPeople in
+                    if people.contains(aPeople) {
+                        print(aPeople)
+                    }
+                    return !people.contains(aPeople)
+                }
+                
+                await MainActor.run {
+                    people += filteredPeople
+                }
+                
+            } catch {
+                await MainActor.run {
+                    isServerError = true
+                }
+            }
+        }
+    }
+    
     func getGenderList(isMale: Bool) {
         let url = RandomUserClient.Endpoints.getPersonList(gender: isMale ? "male" : "female").url
-        print(url)
+//        print(url)
         Task {
             do {
                 await MainActor.run {
