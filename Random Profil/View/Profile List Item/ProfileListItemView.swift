@@ -24,8 +24,8 @@ struct ProfileListItemView: View {
             } else {
                 Image(systemName: "person")
                     .resizable()
-                    .padding(10)
                     .frame(width:55, height: 55)
+                    .padding(10)
                     .foregroundColor(.gray)
             }
             
