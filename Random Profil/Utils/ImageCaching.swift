@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct ImageCaching {
-    private var cachingImage: NSCache<NSString, UIImage> = NSCache()
+    var cachingImage: NSCache<NSString, UIImage> = NSCache()
     
-    func get(forKey: String) -> UIImage? {
-        return cachingImage.object(forKey: NSString(string: forKey))
+    subscript(forKey: String) -> UIImage? {
+        get {
+            return cachingImage.object(forKey: NSString(string: forKey))
+        }
     }
     
     func set(forKey: String, image: UIImage) {
