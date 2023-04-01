@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 class MaleFemaleViewModel: ObservableObject {
     
-    @Published var People: [ProfileStruct] = [ProfileStruct]()
-    @Published var People: [ProfileListStruct] = [ProfileListStruct]()
+    @Published var people: [ProfileListStruct] = [ProfileListStruct]()
     @Published var isServerError: Bool = false
+    private var imageCaching = ImageCaching()
     
     init(isMale: Bool) {
         self.getGenderList(isMale: isMale)
@@ -29,7 +30,9 @@ class MaleFemaleViewModel: ObservableObject {
                 let getPeople = try await loadDataFromServer(url: url)
                 
                 await MainActor.run {
-                    People = getPeople
+                    people = [ProfileListStruct]()
+                    imageCaching.cachingImage.removeAllObjects()
+                    people = getPeople
                 }
                 
             } catch {
@@ -38,11 +41,27 @@ class MaleFemaleViewModel: ObservableObject {
                 }
             }
         }
-        
-        
     }
     
-    func loadDataFromServer(url: String) async throws -> [ProfileStruct] {
+    func fetchImageFromNetwork(url: String) async throws -> UIImage? {
+        if let imageCache = imageCaching[url] {
+            return imageCache
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: URL(string: url)!)
+        
+        let image = UIImage(data: data)
+        if let image = image {
+            if let imageCache = imageCaching[url] {
+                return imageCache
+            }
+            imageCaching.set(forKey: url, image: image)
+            return image
+        } else {
+            return nil
+        }
+    }
+    
     func loadDataFromServer(url: String) async throws -> [ProfileListStruct] {
         let (data, response) = try await URLSession.shared.data(from: URL(string: url)!)
         
@@ -51,9 +70,9 @@ class MaleFemaleViewModel: ObservableObject {
             throw NSError(domain: "HTTP Connect Fail", code: 404)
         }
         let profileStructs = try await readDecoder(data: data)
-        return profileStructs.asProfileListStruct()
+        let profileListStructs = profileStructs.asProfileListStruct()
         
-        return try await readDecoder(data: data)
+        return profileListStructs
     }
     
     func readDecoder(data: Data) async throws -> [ProfileStruct] {
