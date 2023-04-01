@@ -4,6 +4,6 @@
 Using API
 https://randomuser.me
 
-Language:SwiftUI, Swift
+Language: SwiftUI, Swift
 
 Thank you.
