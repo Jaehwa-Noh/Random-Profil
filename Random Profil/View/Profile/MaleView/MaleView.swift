@@ -15,24 +15,28 @@ struct MaleView: View, ProfilePage {
     
     var body: some View {
         ZStack {
-            if viewModel.People.isEmpty {
+            if viewModel.people.isEmpty {
                 ProgressView()
                     .scaleEffect(CGSize(width: 1.5, height: 1.5))
             }
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.People, id:\.self.uuid) { people in
-                        ProfileListItemView(imageURL: people.imageURL, name: people.name, location: people.location, email: people.email, profileImage: people.profileImage)
-                            .onAppear {
-                                print(people.name)
-                            }
+                    ForEach(viewModel.people, id:\.self.uuid) { people in
+                        ProfileListItemView(
+                            name: people.name,
+                            location: people.location,
+                            email: people.email,
+                            imageURL: people.imageURL,
+                            profileImage: people.profileImage,
+                            viewModel: viewModel)
                     }
                 }
             }
         }
         .refreshable {
-            print("refresh")
+            viewModel.getGenderList(isMale: true)
         }
+        
         .alert("서버 통신 문제", isPresented: $viewModel.isServerError) {
             Button("확인", role:.cancel) {
             }

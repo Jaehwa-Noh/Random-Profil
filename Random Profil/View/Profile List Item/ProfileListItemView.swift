@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct ProfileListItemView: View {
-    var imageURL: String
     var name: String
     var location: String
     var email: String
-    var profileImage: UIImage?
+    var imageURL: String
+    @State var profileImage: UIImage?
+    var viewModel: MaleFemaleViewModel
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: imageURL)) { phase in
-                
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .frame(width: 75, height: 75)
-                        
-                } else {
-                    Image(systemName: "person")
-                        .resizable()
-                        .foregroundColor(.gray)
-                        .frame(width: 55, height: 55)
-                        .padding(10)
-                        
-                }
+            if let image = profileImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 75, height: 75)
+            } else {
+                Image(systemName: "person")
+                    .resizable()
+                    .padding(10)
+                    .frame(width:55, height: 55)
+                    .foregroundColor(.gray)
             }
             
             Spacer()
@@ -48,13 +44,23 @@ struct ProfileListItemView: View {
             }
             Spacer()
             
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
+        .onAppear {
+            Task {
+                let fetchImage = try? await viewModel.fetchImageFromNetwork(url: imageURL)
+                await MainActor.run {
+                    profileImage = fetchImage
+                }
+            }
+        }
     }
+    
 }
 
 struct ProfileListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg", name: "Hello", location: "location", email: "@gmail")
-        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg", name: "Hello", location: "location", email: "@gmail", profileImage: nil)
+        ProfileListItemView(name: "Hello", location: "location", email: "@gmail", imageURL: "", profileImage: nil, viewModel: MaleFemaleViewModel(isMale: true))
+        
     }
 }

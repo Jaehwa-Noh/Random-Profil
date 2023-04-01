@@ -32,7 +32,7 @@ extension [ProfileStruct] {
     func asProfileListStruct() -> [ProfileListStruct] {
         self.map { profileStruct in
             let name = "\(profileStruct.name.title) \(profileStruct.name.first) \(profileStruct.name.last)"
-            return ProfileListStruct(uuid: profileStruct.login.uuid, name: name, imageURL: profileStruct.picture.thumbnail, location: profileStruct.location.street.name, email: profileStruct.email, profileImage: UIImage(systemName: "person"))
+            return ProfileListStruct(uuid: profileStruct.login.uuid, name: name, imageURL: profileStruct.picture.thumbnail, location: profileStruct.location.street.name, email: profileStruct.email, profileImage: nil)
             
         }
     }
