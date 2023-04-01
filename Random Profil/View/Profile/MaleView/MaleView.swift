@@ -10,12 +10,14 @@ import SwiftUI
 struct MaleView: View, ProfilePage {
     
     @StateObject private var viewModel = MaleFemaleViewModel(isMale: true)
+    @State var isError: Bool = false
+    private var isMale = true
     
     private let imageCaching: ImageCaching = ImageCaching()
     
     var body: some View {
         ZStack {
-            if viewModel.people.isEmpty {
+            if viewModel.people.isEmpty && !isError {
                 ProgressView()
                     .scaleEffect(CGSize(width: 1.5, height: 1.5))
             }
@@ -29,16 +31,23 @@ struct MaleView: View, ProfilePage {
                             imageURL: people.imageURL,
                             profileImage: people.profileImage,
                             viewModel: viewModel)
+                        .onAppear {
+                            if people == viewModel.people.last {
+                                viewModel.getMoreList(isMale: isMale)
+                            }
+                        }
                     }
                 }
             }
         }
         .refreshable {
-            viewModel.getGenderList(isMale: true)
+            isError = false
+            viewModel.getGenderList(isMale: isMale)
         }
         
         .alert("서버 통신 문제", isPresented: $viewModel.isServerError) {
             Button("확인", role:.cancel) {
+                isError = true
             }
         }
         
