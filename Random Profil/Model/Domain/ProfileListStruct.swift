@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct ProfileListStruct {
+struct ProfileListStruct: Equatable {
     let uuid: String
     let name: String
     let imageURL: String
