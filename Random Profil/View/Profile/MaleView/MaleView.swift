@@ -11,6 +11,8 @@ struct MaleView: View, ProfilePage {
     
     @StateObject private var viewModel = MaleFemaleViewModel(isMale: true)
     
+    private let imageCaching: ImageCaching = ImageCaching()
+    
     var body: some View {
         ZStack {
             if viewModel.People.isEmpty {
@@ -19,11 +21,10 @@ struct MaleView: View, ProfilePage {
             }
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.People, id:\.self.login.uuid) { people in
-                        let name = "\(people.name.title) \(people.name.first) \(people.name.last)"
-                        ProfileListItemView(imageURL: people.picture.thumbnail, name: name, location: people.location.street.name, email: people.email)
+                    ForEach(viewModel.People, id:\.self.uuid) { people in
+                        ProfileListItemView(imageURL: people.imageURL, name: people.name, location: people.location, email: people.email, profileImage: people.profileImage)
                             .onAppear {
-                                print(name)
+                                print(people.name)
                             }
                     }
                 }

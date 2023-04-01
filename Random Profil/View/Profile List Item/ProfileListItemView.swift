@@ -12,6 +12,7 @@ struct ProfileListItemView: View {
     var name: String
     var location: String
     var email: String
+    var profileImage: UIImage?
     
     var body: some View {
         HStack {
@@ -54,5 +55,6 @@ struct ProfileListItemView: View {
 struct ProfileListItemView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg", name: "Hello", location: "location", email: "@gmail")
+        ProfileListItemView(imageURL: "https://randomuser.me/api/portraits/women/82.jpg", name: "Hello", location: "location", email: "@gmail", profileImage: nil)
     }
 }

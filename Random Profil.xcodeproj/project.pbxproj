@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF002C0C29D7BBFA00C6F249 /* ProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF002C0B29D7BBFA00C6F249 /* ProfileListItemViewModel.swift */; };
+		CF002C0E29D7CA1700C6F249 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF002C0D29D7CA1700C6F249 /* NetworkImageView.swift */; };
+		CF002C1129D7CF2100C6F249 /* ProfileListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF002C1029D7CF2100C6F249 /* ProfileListStruct.swift */; };
 		CF2BEF4429D565C4005C75A6 /* Random_ProfilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF4329D565C4005C75A6 /* Random_ProfilApp.swift */; };
 		CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BEF4529D565C4005C75A6 /* ContentView.swift */; };
 		CF2BEF4829D565C5005C75A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BEF4729D565C5005C75A6 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF002C0B29D7BBFA00C6F249 /* ProfileListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListItemViewModel.swift; sourceTree = "<group>"; };
+		CF002C0D29D7CA1700C6F249 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
+		CF002C1029D7CF2100C6F249 /* ProfileListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListStruct.swift; sourceTree = "<group>"; };
 		CF2BEF4029D565C4005C75A6 /* Random Profil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Random Profil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BEF4329D565C4005C75A6 /* Random_ProfilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_ProfilApp.swift; sourceTree = "<group>"; };
 		CF2BEF4529D565C4005C75A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF002C0F29D7CF0100C6F249 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CF002C1029D7CF2100C6F249 /* ProfileListStruct.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		CF2BEF3729D565C4005C75A6 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2BEF6129D58592005C75A6 /* ProfileListItemView.swift */,
+				CF002C0D29D7CA1700C6F249 /* NetworkImageView.swift */,
 			);
 			path = "Profile List Item";
 			sourceTree = "<group>";
@@ -166,6 +181,7 @@
 		CFCECBFC29D6846900A6D5E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF002C0F29D7CF0100C6F249 /* Domain */,
 				CFCECC1529D6A3B700A6D5E0 /* Network */,
 				CFCECBFD29D6848A00A6D5E0 /* Json */,
 			);
@@ -192,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CFCECC1329D69C9F00A6D5E0 /* MaleFemaleViewModel.swift */,
+				CF002C0B29D7BBFA00C6F249 /* ProfileListItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,7 +295,9 @@
 				CFCECC0B29D6982000A6D5E0 /* RegisteredStruct.swift in Sources */,
 				CFCECC0929D6979E00A6D5E0 /* DobStruct.swift in Sources */,
 				CFCECC1129D6998700A6D5E0 /* InfoStruct.swift in Sources */,
+				CF002C1129D7CF2100C6F249 /* ProfileListStruct.swift in Sources */,
 				CF2BEF5829D567DC005C75A6 /* FemaleView.swift in Sources */,
+				CF002C0C29D7BBFA00C6F249 /* ProfileListItemViewModel.swift in Sources */,
 				CF2BEF5429D5679C005C75A6 /* ProfilePagerView.swift in Sources */,
 				CF2BEF4629D565C4005C75A6 /* ContentView.swift in Sources */,
 				CFCECC0329D6850800A6D5E0 /* NameStruct.swift in Sources */,
@@ -289,6 +308,7 @@
 				CF2BEF5D29D57731005C75A6 /* ProfilePageProtocol.swift in Sources */,
 				CF2BEF5F29D57801005C75A6 /* ProfilePageViewController.swift in Sources */,
 				CFCECC0129D684CB00A6D5E0 /* ProfileStruct.swift in Sources */,
+				CF002C0E29D7CA1700C6F249 /* NetworkImageView.swift in Sources */,
 				CFCECC0529D6858700A6D5E0 /* LocationStruct.swift in Sources */,
 				CFCECC0729D6873B00A6D5E0 /* LoginStruct.swift in Sources */,
 				CF2BEF5A29D567E4005C75A6 /* MaleView.swift in Sources */,

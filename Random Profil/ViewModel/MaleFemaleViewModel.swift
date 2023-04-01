@@ -10,6 +10,7 @@ import Foundation
 class MaleFemaleViewModel: ObservableObject {
     
     @Published var People: [ProfileStruct] = [ProfileStruct]()
+    @Published var People: [ProfileListStruct] = [ProfileListStruct]()
     @Published var isServerError: Bool = false
     
     init(isMale: Bool) {
@@ -42,12 +43,15 @@ class MaleFemaleViewModel: ObservableObject {
     }
     
     func loadDataFromServer(url: String) async throws -> [ProfileStruct] {
+    func loadDataFromServer(url: String) async throws -> [ProfileListStruct] {
         let (data, response) = try await URLSession.shared.data(from: URL(string: url)!)
         
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
               (200...299).contains(statusCode) else {
             throw NSError(domain: "HTTP Connect Fail", code: 404)
         }
+        let profileStructs = try await readDecoder(data: data)
+        return profileStructs.asProfileListStruct()
         
         return try await readDecoder(data: data)
     }
